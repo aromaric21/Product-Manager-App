@@ -19,7 +19,8 @@ public class ProductService {
 
     public Page<Product> listAll(int pageNumber, String sortField, String sortDir){
         int pageSize = 6;
-        Sort sort = sortDir.equals("asc") ? Sort.by(sortField).ascending() : Sort.by(sortField).descending();
+        Sort sort =
+                sortDir.equals("asc") ? Sort.by(sortField).ascending() : Sort.by(sortField).descending();
 
         Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
 
